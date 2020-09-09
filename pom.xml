@@ -7,16 +7,19 @@
     <groupId>org.example</groupId>
     <artifactId>scala_example</artifactId>
     <version>1.0</version>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <akka.version>2.6.8</akka.version>
+    </properties>
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/com.typesafe.akka/akka-actor -->
         <dependency>
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-actor_2.12</artifactId>
-            <version>2.6.8</version>
+            <version>${akka.version}</version>
             <exclusions>
                 <exclusion>
-                    <artifactId>scala-library</artifactId>
-                    <groupId>org.scala-lang</groupId>
+                    <artifactId>scala-java8-compat_2.12</artifactId>
+                    <groupId>org.scala-lang.modules</groupId>
                 </exclusion>
             </exclusions>
         </dependency>
