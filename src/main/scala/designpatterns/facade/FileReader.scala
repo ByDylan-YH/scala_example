@@ -1,8 +1,8 @@
 package designpatterns.facade
 
-import java.io.{FileNotFoundException, IOException};
+import java.io.{FileNotFoundException, IOException}
 
-import scala.io.Source;
+import scala.io.Source
 
 /**
   * Author:BY
@@ -16,15 +16,15 @@ class FileReader {
     /**
       * 读入文件
       */
-    var target = "";
+    var target = ""
     try {
       for (s <- Source.fromFile(fileNameSrc)) {
-        target += s.toString;
+        target += s.toString
       }
     } catch {
-      case io: IOException => io.printStackTrace();
-      case noFile: FileNotFoundException => noFile.printStackTrace();
+      case io: IOException => io.printStackTrace()
+      case noFile: FileNotFoundException => noFile.printStackTrace()
     }
-    return target;
+    return target
   }
 }

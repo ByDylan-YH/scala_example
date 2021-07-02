@@ -10,7 +10,7 @@ object YieldFor {
          s"${i}不是偶数"
       }
     }
-    println(res);
+    println(res)
 
   }
 }

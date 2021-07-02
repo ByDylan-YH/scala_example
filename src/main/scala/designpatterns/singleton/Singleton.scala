@@ -10,18 +10,18 @@ class Worker private {
 }
 
 object Worker {
-  val worker = new Worker;
+  val worker = new Worker
 
   def GetWorkInstance(): Worker = {
-    worker.work();
-    return worker;
+    worker.work()
+    return worker
   }
 }
 
 object Singleton {
   def main(args: Array[String]) {
     for (i <- 1 to 3) {
-      Worker.GetWorkInstance();
+      Worker.GetWorkInstance()
     }
   }
 }

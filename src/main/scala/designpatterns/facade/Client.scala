@@ -7,5 +7,5 @@ package designpatterns.facade
   */
 object Client extends App {
   val encryptFacade = new EncryptFacade
-  encryptFacade.fileEncrypt("hello", "des");
+  encryptFacade.fileEncrypt("hello", "des")
 }

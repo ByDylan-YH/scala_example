@@ -10,37 +10,37 @@ import scala.collection.mutable.ArrayBuffer
 
 // 加法类
 class Adder {
-  private var num = 0;
+  private var num = 0
 
   def add(value: Int) = {
-    num += value;
-    num;
+    num += value
+    num
   }
 
 }
 
 //抽象命令类
 abstract class AbstractCommand {
-  def execute(value: Int): Int;
+  def execute(value: Int): Int
 
-  def undo(): Int;
+  def undo(): Int
 
-  def redo(): Int;
+  def redo(): Int
 }
 
 //具体命令类
 class AddCommand extends AbstractCommand {
   //  值栈存放传入数值，用于进行undo
-  private val values = new ArrayBuffer[Int]();
+  private val values = new ArrayBuffer[Int]()
   //  值栈存放undo数值，用于redo
-  private val valuesRedo = new ArrayBuffer[Int]();
+  private val valuesRedo = new ArrayBuffer[Int]()
   //  请求接收者
-  val adder = new Adder;
+  val adder = new Adder
 
   //  执行过程中将操作数放入值栈
   override def execute(value: Int) = {
-    values += value;
-    adder.add(value);
+    values += value
+    adder.add(value)
   }
 
   /**
@@ -51,10 +51,11 @@ class AddCommand extends AbstractCommand {
     */
   override def undo() = {
     values.length match {
-      case 0 => println("不可undo"); adder.add(0);
-      case _ => val temp = values.remove(values.length - 1);
-        valuesRedo += temp;
-        adder.add(-temp);
+      case 0 => println("不可undo")
+        adder.add(0)
+      case _ => val temp = values.remove(values.length - 1)
+        valuesRedo += temp
+        adder.add(-temp)
     }
 
   }
@@ -67,28 +68,29 @@ class AddCommand extends AbstractCommand {
     */
   override def redo() = {
     valuesRedo.length match {
-      case 0 => println("不可redo"); adder.add(0);
-      case _ => val temp = valuesRedo.remove(valuesRedo.length - 1);
-        values += temp;
-        adder.add(temp);
+      case 0 => println("不可redo")
+        adder.add(0)
+      case _ => val temp = valuesRedo.remove(valuesRedo.length - 1)
+        values += temp
+        adder.add(temp)
     }
   }
 }
 
 class CalculatorForm(command: AbstractCommand) {
   def compute(value: Int): Unit = {
-    val i = command.execute(value);
-    println(s"执行运算，运算结果为: $i");
+    val i = command.execute(value)
+    println(s"执行运算，运算结果为: $i")
   }
 
   def undo(): Unit = {
-    val i = command.undo();
-    println(s"执行undo，运算结果为: $i");
+    val i = command.undo()
+    println(s"执行undo，运算结果为: $i")
 
   }
 
   def redo(): Unit = {
-    val i = command.redo();
-    println(s"执行redo，运算结果为: $i");
+    val i = command.redo()
+    println(s"执行redo，运算结果为: $i")
   }
 }

@@ -90,16 +90,16 @@ class Congress(name: String) extends Approve(name) {
   * Created by ctao on 2015/8/30.
   */
 object Client extends App {
-  val ZH: Approve = new Director("周华");
-  val YJY: Approve = new VicePresident("游建友");
-  val WZX: Approve = new President("吴志雄");
-  val meeting: Approve = new Congress("董事会");
-  ZH.setSuccessor(YJY);
-  YJY.setSuccessor(WZX);
-  WZX.setSuccessor(meeting);
-  ZH.processRequest(PurchaseRequest(45000, 1001, "大数据卡口项目"));
-  ZH.processRequest(PurchaseRequest(60000, 1002, "服务器购置"));
-  ZH.processRequest(PurchaseRequest(145000, 1003, "星环开科技专利购买"));
-  ZH.processRequest(PurchaseRequest(1145000, 1004, "公司并购"));
+  val ZH: Approve = new Director("周华")
+  val YJY: Approve = new VicePresident("游建友")
+  val WZX: Approve = new President("吴志雄")
+  val meeting: Approve = new Congress("董事会")
+  ZH.setSuccessor(YJY)
+  YJY.setSuccessor(WZX)
+  WZX.setSuccessor(meeting)
+  ZH.processRequest(PurchaseRequest(45000, 1001, "大数据卡口项目"))
+  ZH.processRequest(PurchaseRequest(60000, 1002, "服务器购置"))
+  ZH.processRequest(PurchaseRequest(145000, 1003, "星环开科技专利购买"))
+  ZH.processRequest(PurchaseRequest(1145000, 1004, "公司并购"))
 
 }

@@ -12,18 +12,18 @@ object Decorator extends App {
 
   class FileOutputStream(path: String) extends OutStream {
     override def write(b: Array[Byte]) = {
-      println("do something");
+      println("do something")
     }
   }
 
   trait Buffering extends OutStream {
     abstract override def write(b: Array[Byte]) = {
-      println("do something before super.write buffering");
-      super.write(b);
+      println("do something before super.write buffering")
+      super.write(b)
     }
   }
 
-  new FileOutputStream("hi").write("hi fileoutput stream".getBytes());
+  new FileOutputStream("hi").write("hi fileoutput stream".getBytes())
 
-  (new FileOutputStream("hi") with Buffering).write("buffering".getBytes());
+  (new FileOutputStream("hi") with Buffering).write("buffering".getBytes())
 }

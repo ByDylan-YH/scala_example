@@ -10,11 +10,11 @@ object Test extends App {
     code = "89757",
     name = "Bat-Man",
     battery = 99
-  );
-  System.out.println(s"Robot1 : $robot1");
+  )
+  System.out.println(s"Robot1 : $robot1")
   try {
-    val robot2 = Robot(name = "Bat-Man");
+    val robot2 = Robot(name = "Bat-Man")
   } catch {
-    case e: Throwable => e.getMessage();
+    case e: Throwable => e.getMessage()
   }
 }

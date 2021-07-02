@@ -28,22 +28,22 @@ class WinnerState extends State {
   }
 
   override def turnCrank(): Unit = {
-    println("we are giving you a candy,turning another get nothing,!");
+    println("we are giving you a candy,turning another get nothing,!")
 
   }
 
   override def dispense(): Unit = {
     mCandyMachine.releaseCandy()
     if (mCandyMachine.getCount() == 0) {
-      mCandyMachine.setState(mCandyMachine.mSoldOutState);
+      mCandyMachine.setState(mCandyMachine.mSoldOutState)
     } else {
       println("you are a winner!you get another candy!")
       mCandyMachine.releaseCandy()
       if (mCandyMachine.getCount() > 0) {
-        mCandyMachine.setState(mCandyMachine.mOnReadyState);
+        mCandyMachine.setState(mCandyMachine.mOnReadyState)
       } else {
-        println("Oo,out of candies");
-        mCandyMachine.setState(mCandyMachine.mSoldOutState);
+        println("Oo,out of candies")
+        mCandyMachine.setState(mCandyMachine.mSoldOutState)
       }
     }
   }

@@ -11,13 +11,13 @@ class FileWriter {
   def write(encryptStr: String, fileNameDes: String): Unit = {
     print("保存密文，写入文件：")
     try {
-      val out = new PrintWriter(fileNameDes);
-      out.print(encryptStr);
-      out.close();
+      val out = new PrintWriter(fileNameDes)
+      out.print(encryptStr)
+      out.close()
     } catch {
-      case io: IOException => io.printStackTrace();
-      case noFile: FileNotFoundException => noFile.printStackTrace();
-      case _: Throwable => print("其它异常");
+      case io: IOException => io.printStackTrace()
+      case noFile: FileNotFoundException => noFile.printStackTrace()
+      case _: Throwable => print("其它异常")
     }
   }
 }

@@ -6,7 +6,7 @@ package designpatterns.abstractfactory
   * Description:抽象工厂调用
   */
 object Client extends App {
-  val factory: SkinFactory = SpringSkinFactory;
-  factory.createButton().display();
-  factory.createTextField().display();
+  val factory: SkinFactory = SpringSkinFactory
+  factory.createButton().display()
+  factory.createTextField().display()
 }

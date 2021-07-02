@@ -16,15 +16,15 @@ class CandyMachine {
     this
     this.location = location
     this.count = count
-    mSoldOutState = new SoldOutState(this);
-    mOnReadyState = new OnReadyState(this);
-    mHasCoin = new HasCoin(this);
-    mSoldState = new SoldState(this);
-    mWinnerState = new WinnerState(this);
+    mSoldOutState = new SoldOutState(this)
+    mOnReadyState = new OnReadyState(this)
+    mHasCoin = new HasCoin(this)
+    mSoldState = new SoldState(this)
+    mWinnerState = new WinnerState(this)
     if (count > 0) {
-      state = mOnReadyState;
+      state = mOnReadyState
     } else {
-      state = mSoldOutState;
+      state = mSoldOutState
     }
   }
 
@@ -54,7 +54,7 @@ class CandyMachine {
 
     if (count > 0) {
       count = count - 1
-      println("a candy rolling out!");
+      println("a candy rolling out!")
     }
   }
 

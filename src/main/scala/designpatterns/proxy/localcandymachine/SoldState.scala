@@ -38,10 +38,10 @@ class SoldState extends State {
 
     mCandyMachine.releaseCandy() //数量减去
     if (mCandyMachine.getCount() > 0) { //如果还有糖，则进入readystate
-      mCandyMachine.setState(mCandyMachine.mOnReadyState);
+      mCandyMachine.setState(mCandyMachine.mOnReadyState)
     } else { // 没有糖，则进入soleoutstate
-      println("Oo,out of candies");
-      mCandyMachine.setState(mCandyMachine.mSoldOutState);
+      println("Oo,out of candies")
+      mCandyMachine.setState(mCandyMachine.mSoldOutState)
     }
   }
 }

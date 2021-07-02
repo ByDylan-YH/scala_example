@@ -8,7 +8,7 @@ object ExceptionDemo {
     //    4.try 当中一旦异常,try里面的后续步骤不再执行,执行try外语句
     try {
       val r = 10 / 0
-      throwsException();
+      throwsException()
       println("try内部")
     } catch {
       case ex: ArithmeticException => {

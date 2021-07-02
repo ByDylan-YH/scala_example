@@ -25,11 +25,11 @@ class HasCoin extends State {
   override def returnCoin(): Unit = {
     println("coin return!")
     //如果在有Coin的状态下，执行了returnCoin,那么糖果机又进入到redayState
-    mCandyMachine.setState(mCandyMachine.mOnReadyState);
+    mCandyMachine.setState(mCandyMachine.mOnReadyState)
   }
 
   override def turnCrank(): Unit = {
-    println("crank turn...!");
+    println("crank turn...!")
     val ranwinner = new java.util.Random()
     //设置一个抽奖随机数,如果返回一个0,就再奖励一块糖
     var winner = ranwinner.nextInt(10)

@@ -14,7 +14,7 @@ object TestCanyMachine {
     mCandyMachine.insertCoin()
     mMonitor.addMachine(mCandyMachine)
 //
-    mCandyMachine = new CandyMachine("北京-朝阳区", 14);
+    mCandyMachine = new CandyMachine("北京-朝阳区", 14)
     //这里故意修改了北京-朝阳区状态
     mCandyMachine.insertCoin()
     mCandyMachine.turnCrank()//转动曲柄，出糖
